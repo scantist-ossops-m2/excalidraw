@@ -12,6 +12,7 @@ import {
   IframeData,
 } from "./types";
 import { sanitizeHTMLAttribute } from "../data/url";
+import { StoreAction } from "../actions/types";
 
 const embeddedLinkCache = new Map<string, IframeData>();
 
@@ -260,7 +261,7 @@ export const actionSetEmbeddableAsActiveTool = register({
           type: "embeddable",
         }),
       },
-      commitToHistory: false,
+      storeAction: StoreAction.NONE,
     };
   },
 });
